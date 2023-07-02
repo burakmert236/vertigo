@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915be605f6fec4fb69969122a56dfdf9, type: 3}
+  m_Name: WheelRotationSettings_Default
+  m_EditorClassIdentifier: 
+  wheelRotationDuration: 4
+  wheelRotationDelayOffset: 0.1
+  randomRotationMinAngle: 1440
+  randomRotationMaxAngle: 1800
