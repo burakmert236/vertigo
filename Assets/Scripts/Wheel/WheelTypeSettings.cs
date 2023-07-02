@@ -16,26 +16,27 @@ namespace Wheel
         }
 
         [System.Serializable]
-        public struct WheelTypeSprite
+        public struct WheelTypes
         {
             public WheelType type;
             public Sprite sprite;
+            public Color color;
+            public string text;
         }
 
-        public WheelTypeSprite[] wheelTypeSprites;
+        public WheelTypes[] wheelTypes;
 
-        public Sprite GetSpriteOfWheelType (WheelType type)
+        public WheelTypes GetSpriteOfWheelType (WheelType type)
         {
 
             // default sprite for spin
-            Sprite result = wheelTypeSprites[0].sprite;
+            WheelTypes result = wheelTypes[0];
 
-            foreach (WheelTypeSprite _wheelTypeSprite in wheelTypeSprites)
+            foreach (WheelTypes _wheelTypeSprite in wheelTypes)
             {
                 if(_wheelTypeSprite.type == type)
                 {
-                    result = _wheelTypeSprite.sprite;
-                    return result;
+                    return _wheelTypeSprite;
                 }
             }
 
