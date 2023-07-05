@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
+using static Wheel.WheelTypeSettings;
 
 namespace Reward
 {
@@ -57,21 +58,21 @@ namespace Reward
 
         public RewardTypeSprites[] rewardTypeSprites;
 
-        private Dictionary<RewardType, RewardTypeSprites> rewardTypeSpriteDict;
-
-        public Dictionary<RewardType, RewardTypeSprites> RewardTypeSpriteDict
+        public RewardTypeSprites GetSpriteOfRewardType(RewardType type)
         {
-            get { return rewardTypeSpriteDict; }
-        }
 
-        void Start()
-        {
-            rewardTypeSpriteDict = new Dictionary<RewardType, RewardTypeSprites>();
+            // default sprite for spin
+            RewardTypeSprites result = rewardTypeSprites[0];
 
-            foreach(RewardTypeSprites _reward_type in rewardTypeSprites)
+            foreach (RewardTypeSprites _wheelTypeSprite in rewardTypeSprites)
             {
-                rewardTypeSpriteDict.Add(_reward_type.type, _reward_type);
+                if (_wheelTypeSprite.type == type)
+                {
+                    return _wheelTypeSprite;
+                }
             }
+
+            return result;
         }
     }
 }
