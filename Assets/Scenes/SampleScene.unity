@@ -3339,7 +3339,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3364,8 +3364,8 @@ MonoBehaviour:
       rewardType: 14
       rewardAmount: 4
     - slotNumber: 2
-      rewardType: 29
-      rewardAmount: 20
+      rewardType: 34
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 4
       rewardAmount: 3
@@ -3401,6 +3401,9 @@ MonoBehaviour:
       rewardType: 0
       rewardAmount: 100
     - slotNumber: 2
+      rewardType: 34
+      rewardAmount: 1
+    - slotNumber: 2
       rewardType: 1
       rewardAmount: 20
     - slotNumber: 2
@@ -3415,9 +3418,6 @@ MonoBehaviour:
     - slotNumber: 2
       rewardType: 32
       rewardAmount: 4
-    - slotNumber: 2
-      rewardType: 34
-      rewardAmount: 20
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3469,7 +3469,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3495,7 +3495,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3521,7 +3521,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3547,7 +3547,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3599,7 +3599,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3625,7 +3625,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3651,7 +3651,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3677,7 +3677,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3729,7 +3729,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3755,7 +3755,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3781,7 +3781,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3807,7 +3807,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3859,6 +3859,110 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 20
+      rewardAmount: 3
+  - zoneNumber: 4
+    slot:
+    - slotNumber: 1
+      rewardType: 0
+      rewardAmount: 100
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 26
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 17
+      rewardAmount: 3
+    - slotNumber: 2
+      rewardType: 32
+      rewardAmount: 4
+    - slotNumber: 2
+      rewardType: 34
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 20
+      rewardAmount: 3
+  - zoneNumber: 4
+    slot:
+    - slotNumber: 1
+      rewardType: 0
+      rewardAmount: 100
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 26
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 17
+      rewardAmount: 3
+    - slotNumber: 2
+      rewardType: 32
+      rewardAmount: 4
+    - slotNumber: 2
+      rewardType: 34
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 20
+      rewardAmount: 3
+  - zoneNumber: 4
+    slot:
+    - slotNumber: 1
+      rewardType: 0
+      rewardAmount: 100
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 26
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 17
+      rewardAmount: 3
+    - slotNumber: 2
+      rewardType: 32
+      rewardAmount: 4
+    - slotNumber: 2
+      rewardType: 34
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 20
+      rewardAmount: 3
+  - zoneNumber: 4
+    slot:
+    - slotNumber: 1
+      rewardType: 0
+      rewardAmount: 100
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 1
+      rewardAmount: 20
+    - slotNumber: 2
+      rewardType: 26
+      rewardAmount: 1
+    - slotNumber: 2
+      rewardType: 17
+      rewardAmount: 3
+    - slotNumber: 2
+      rewardType: 32
+      rewardAmount: 4
+    - slotNumber: 2
+      rewardType: 17
       rewardAmount: 20
     - slotNumber: 2
       rewardType: 20
@@ -3885,7 +3989,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3911,7 +4015,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
+      rewardAmount: 1
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3937,33 +4041,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 20
-      rewardAmount: 3
-  - zoneNumber: 4
-    slot:
-    - slotNumber: 1
-      rewardType: 0
-      rewardAmount: 100
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 26
       rewardAmount: 1
-    - slotNumber: 2
-      rewardType: 17
-      rewardAmount: 3
-    - slotNumber: 2
-      rewardType: 32
-      rewardAmount: 4
-    - slotNumber: 2
-      rewardType: 17
-      rewardAmount: 20
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
@@ -3989,85 +4067,7 @@ MonoBehaviour:
       rewardAmount: 4
     - slotNumber: 2
       rewardType: 34
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 20
-      rewardAmount: 3
-  - zoneNumber: 4
-    slot:
-    - slotNumber: 1
-      rewardType: 0
-      rewardAmount: 100
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 26
       rewardAmount: 1
-    - slotNumber: 2
-      rewardType: 17
-      rewardAmount: 3
-    - slotNumber: 2
-      rewardType: 32
-      rewardAmount: 4
-    - slotNumber: 2
-      rewardType: 34
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 20
-      rewardAmount: 3
-  - zoneNumber: 4
-    slot:
-    - slotNumber: 1
-      rewardType: 0
-      rewardAmount: 100
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 26
-      rewardAmount: 1
-    - slotNumber: 2
-      rewardType: 17
-      rewardAmount: 3
-    - slotNumber: 2
-      rewardType: 32
-      rewardAmount: 4
-    - slotNumber: 2
-      rewardType: 34
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 20
-      rewardAmount: 3
-  - zoneNumber: 4
-    slot:
-    - slotNumber: 1
-      rewardType: 0
-      rewardAmount: 100
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 1
-      rewardAmount: 20
-    - slotNumber: 2
-      rewardType: 26
-      rewardAmount: 1
-    - slotNumber: 2
-      rewardType: 17
-      rewardAmount: 3
-    - slotNumber: 2
-      rewardType: 32
-      rewardAmount: 4
-    - slotNumber: 2
-      rewardType: 34
-      rewardAmount: 20
     - slotNumber: 2
       rewardType: 20
       rewardAmount: 3
