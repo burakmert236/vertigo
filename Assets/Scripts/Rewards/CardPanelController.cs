@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Reward;
+using Helpers;
 
 public class CardPanelController : MonoBehaviour
 {
@@ -22,17 +23,7 @@ public class CardPanelController : MonoBehaviour
     {
         rewardImage.sprite = _rewardImage;
 
-        AspectRatioFitter aspectRatioFitter = rewardImage.gameObject.AddComponent<AspectRatioFitter>();
-        aspectRatioFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
-
-        float nativeAspectRatio = rewardImage.sprite.rect.width / rewardImage.sprite.rect.height;
-        aspectRatioFitter.aspectRatio = nativeAspectRatio;
-
-        RectTransform rectTransform = rewardImage.rectTransform;
-        rectTransform.anchorMin = new Vector2(0, rectTransform.anchorMin.y);
-        rectTransform.anchorMax = new Vector2(1f, rectTransform.anchorMax.y);
-        rectTransform.offsetMin = new Vector2(0, rectTransform.offsetMin.y);
-        rectTransform.offsetMax = new Vector2(0, rectTransform.offsetMax.y);
+        AspectRatioHelper.aspectRatioFiltterGenerator(rewardImage, 1.0f);
 
         rewardImage.transform.localScale = new Vector3(0.7f, 0.7f, 1);
 
