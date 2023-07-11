@@ -16,9 +16,13 @@ public class WheelRotationController : MonoBehaviour
 
     public AudioSource _audioSource;
 
+    private float singleSlotAngle;
+    private const float wholeWheelAngle = 360f;
+
     // Start is called before the first frame update
     void Start()
     {
+        singleSlotAngle = wholeWheelAngle / _rotationSettings.wheelSlotNumber;
         spin_button.onClick.AddListener(StartAndStopRotationCoroutineStarter);
     }
 
@@ -43,7 +47,9 @@ public class WheelRotationController : MonoBehaviour
         _audioSource.Play();
 
         // Start the wheel rotation
-        Tween rotateTween = wheel.DORotate(new Vector3(0f, 0f, randomAngle), _rotationSettings.wheelRotationDuration, RotateMode.FastBeyond360).SetEase(Ease.InOutQuad);
+        wheel
+            .DORotate(new Vector3(0f, 0f, randomAngle), _rotationSettings.wheelRotationDuration, RotateMode.FastBeyond360)
+            .SetEase(_rotationSettings.rotationEaseType);
 
         // Wait for the duration before stopping the wheel
         yield return new WaitForSeconds(_rotationSettings.wheelRotationDuration + _rotationSettings.wheelRotationDelayOffset);
@@ -54,15 +60,17 @@ public class WheelRotationController : MonoBehaviour
         // Get the current Euler angle of the wheel around the Y axis
         float currentAngle = wheel.rotation.eulerAngles.z;
 
-        float roundedCurrentAngle = Mathf.Round(currentAngle / 45f);
+        float roundedCurrentAngle = Mathf.Round(currentAngle / singleSlotAngle);
 
-        // Round the current angle to the nearest multiple of 45 degrees
-        float roundedAngle = roundedCurrentAngle * 45f;
+        // Round the current angle to the nearest multiple of singleSlotAngle degrees
+        float roundedAngle = roundedCurrentAngle * singleSlotAngle;
 
         // Rotate the wheel to the rounded angle
-        wheel.DORotate(new Vector3(0f, 0f, roundedAngle), 1f).SetEase(Ease.OutQuad);
+        wheel
+            .DORotate(new Vector3(0f, 0f, roundedAngle), 1f)
+            .SetEase(_rotationSettings.roundingRotationEaseType);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_rotationSettings.wheelRoundingRotationDuration);
 
         WheelController parentWheelComponentScript = parentWheelComponent.GetComponent<WheelController>();
 

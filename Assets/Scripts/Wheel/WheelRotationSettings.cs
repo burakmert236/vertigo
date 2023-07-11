@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Wheel
 {
@@ -9,10 +10,14 @@ namespace Wheel
     public class WheelRotationSettings : ScriptableObject
     {
         public float wheelRotationDuration;
+        public float wheelRoundingRotationDuration;
         public float wheelRotationDelayOffset;
 
         public int randomRotationMinAngle;
         public int randomRotationMaxAngle;
 
+        public int wheelSlotNumber;
+        public Ease rotationEaseType;
+        public Ease roundingRotationEaseType;
     }
 }

@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: WheelRotationSettings_Default
   m_EditorClassIdentifier: 
   wheelRotationDuration: 4
+  wheelRoundingRotationDuration: 1
   wheelRotationDelayOffset: 0.1
   randomRotationMinAngle: 1440
   randomRotationMaxAngle: 1800
+  wheelSlotNumber: 8
+  rotationEaseType: 7
+  roundingRotationEaseType: 6
