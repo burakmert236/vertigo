@@ -12,6 +12,12 @@ namespace Reward
         public Button spinButton;
 
         private GameObject cardPanel;
+        private Button closeButton;
+
+        private void OnDestroy() 
+        {
+            closeButton.onClick.RemoveListener(DestroyCard);
+        }
 
         public void CreateCardPanel(Sprite rewardImage, int rewardAmount, RewardTypeSettings.RewardType rewardType)
         {
@@ -25,7 +31,7 @@ namespace Reward
             cardPanelRect.offsetMin = new Vector2(0, 0);
             cardPanelRect.offsetMax = new Vector2(0, 0);
 
-            Button closeButton = cardPanel.GetComponent<Button>();
+            closeButton = cardPanel.GetComponent<Button>();
             closeButton.onClick.AddListener(DestroyCard);
         }
 

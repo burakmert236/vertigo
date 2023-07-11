@@ -15,6 +15,11 @@ public class GoBackButton : MonoBehaviour
         backButton.onClick.AddListener(GoBackAnimation);
     }
 
+	private void OnDestroy()
+    {
+        backButton.onClick.RemoveListener(GoBackAnimation);
+    }
+
 	private void GoBackAnimation()
 	{
 		animator.SetTrigger("BACK_TO_START");

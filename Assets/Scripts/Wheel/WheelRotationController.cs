@@ -22,6 +22,12 @@ public class WheelRotationController : MonoBehaviour
         spin_button.onClick.AddListener(StartAndStopRotationCoroutineStarter);
     }
 
+    private void OnDestroy()
+    {
+        // Remove the listener in OnDestroy()
+        spin_button.onClick.RemoveListener(StartAndStopRotationCoroutineStarter);
+    }
+
     private void StartAndStopRotationCoroutineStarter()
     {
         StartCoroutine(StartAndStopRotation());
