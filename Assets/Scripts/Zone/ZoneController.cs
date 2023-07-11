@@ -14,30 +14,30 @@ namespace Zone
         public Image currentZoneBorderImage;
         public WheelTypeSettings _wheelTypeSettings;
 
-        public void updateZone(int _zoneNumber)
+        public void updateZone(int zoneNumber)
         {
 
-            bool setActive = _zoneNumber > 0;
+            bool setActive = zoneNumber > 0;
             transform.gameObject.SetActive(setActive);
 
             if (!setActive) return;
 
-            zoneNumberText.text = _zoneNumber.ToString();
+            zoneNumberText.text = zoneNumber.ToString();
 
             if(isCurrent)
             {
-                handleBorderImage(_zoneNumber);
+                HandleBorderImage(zoneNumber);
             }
         }
 
-        private void handleBorderImage (int _zoneNumber)
+        private void HandleBorderImage (int zoneNumber)
         {
             WheelTypeSettings.WheelType type = WheelTypeSettings.WheelType.NORMAL;
 
-            if (_zoneNumber % 30 == 0)
+            if (zoneNumber % 30 == 0)
             {
                 type = WheelTypeSettings.WheelType.GOLD;
-            } else if (_zoneNumber % 5 == 0)
+            } else if (zoneNumber % 5 == 0)
             {
                 type = WheelTypeSettings.WheelType.SILVER;
             }

@@ -12,10 +12,10 @@ public class GoBackButton : MonoBehaviour
 	void Start()
 	{
 		backButton = GetComponent<Button>();
-        backButton.onClick.AddListener(goBackAnimation);
+        backButton.onClick.AddListener(GoBackAnimation);
     }
 
-	private void goBackAnimation()
+	private void GoBackAnimation()
 	{
 		animator.SetTrigger("BACK_TO_START");
     }

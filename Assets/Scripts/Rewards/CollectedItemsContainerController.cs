@@ -19,33 +19,33 @@ namespace Reward
             itemsDict = new Dictionary<RewardTypeSettings.RewardType, GameObject>();
         }
 
-        public void updateITems(Reward.RewardTypeSettings.RewardType _rewardType, int _rewardAmount)
+        public void UpdateITems(Reward.RewardTypeSettings.RewardType rewardType, int rewardAmount)
 		{
 
-            if(_rewardType == Reward.RewardTypeSettings.RewardType.DEATH)
+            if(rewardType == Reward.RewardTypeSettings.RewardType.DEATH)
             {
                 itemsDict = new Dictionary<RewardTypeSettings.RewardType, GameObject>();
                 foreach (Transform child in transform)
                 {
                     Destroy(child.gameObject);
                 }
-            } else if(itemsDict.ContainsKey(_rewardType))
+            } else if(itemsDict.ContainsKey(rewardType))
             {
-                GameObject existingItem = itemsDict[_rewardType];
+                GameObject existingItem = itemsDict[rewardType];
                 CollectedItemController existingItemScript = existingItem.GetComponent<CollectedItemController>();
-                existingItemScript.updateAmountOnly(existingItemScript.currentItemAmount + _rewardAmount);
+                existingItemScript.UpdateAmountOnly(existingItemScript.currentItemAmount + rewardAmount);
             } else
             {
                 GameObject newItem = Instantiate(itemPrefab, new Vector3(0, 0, 0), Quaternion.identity);
                 newItem.transform.parent = transform;
                 CollectedItemController newItemScript = newItem.GetComponent<CollectedItemController>();
 
-                RewardTypeSprites rewardTypeSprite = _rewardTypeSettings.GetSpriteOfRewardType(_rewardType);
-                newItemScript.updateItem(rewardTypeSprite.sprite, _rewardAmount);
+                RewardTypeSprites rewardTypeSprite = _rewardTypeSettings.GetSpriteOfRewardType(rewardType);
+                newItemScript.UpdateItem(rewardTypeSprite.sprite, rewardAmount);
 
                 newItem.transform.localScale = new Vector3(1f, 1f, 1f);
 
-                itemsDict.Add(_rewardType, newItem);
+                itemsDict.Add(rewardType, newItem);
             }
         }
 	}

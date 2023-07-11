@@ -64,11 +64,11 @@ namespace Reward
             // default sprite for spin
             RewardTypeSprites result = rewardTypeSprites[0];
 
-            foreach (RewardTypeSprites _wheelTypeSprite in rewardTypeSprites)
+            foreach (RewardTypeSprites wheelTypeSprite in rewardTypeSprites)
             {
-                if (_wheelTypeSprite.type == type)
+                if (wheelTypeSprite.type == type)
                 {
-                    return _wheelTypeSprite;
+                    return wheelTypeSprite;
                 }
             }
 

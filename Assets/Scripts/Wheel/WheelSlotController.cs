@@ -13,12 +13,12 @@ namespace Wheel
         public Image slotImage;
         public TextMeshProUGUI rewardAmountText;
 
-        public void updateSlotUIElements(Sprite newImage, int newRewardAmount)
+        public void UpdateSlotUIElements(Sprite newImage, int newRewardAmount)
         {
             slotImage.sprite = newImage;
             rewardAmountText.text = "x" + newRewardAmount;
 
-            AspectRatioHelper.aspectRatioFiltterGenerator(slotImage, 1.0f);
+            AspectRatioHelper.AspectRatioFiltterGenerator(slotImage, 1.0f);
 
             slotImage.transform.localScale = new Vector3(0.8f, 0.8f, 1);
         }

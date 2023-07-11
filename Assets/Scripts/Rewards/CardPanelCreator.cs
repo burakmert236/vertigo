@@ -13,10 +13,10 @@ namespace Reward
 
         private GameObject cardPanel;
 
-        public void createCardPanel(Sprite _rewardImage, int _rewardAmount, RewardTypeSettings.RewardType _rewardType)
+        public void CreateCardPanel(Sprite rewardImage, int rewardAmount, RewardTypeSettings.RewardType rewardType)
         {
             cardPanel = Instantiate(cardPanelPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            cardPanel.GetComponent<CardPanelController>().updateCardPanel(_rewardImage, _rewardAmount, _rewardType);
+            cardPanel.GetComponent<CardPanelController>().UpdateCardPanel(rewardImage, rewardAmount, rewardType);
 
             cardPanel.transform.parent = transform;
             cardPanel.transform.localScale = new Vector3(1, 1, 1);

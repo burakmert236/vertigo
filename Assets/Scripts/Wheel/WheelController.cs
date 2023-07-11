@@ -11,6 +11,21 @@ namespace Wheel
     public class WheelController : MonoBehaviour
     {
 
+        [System.Serializable]
+        public struct WheelSlot
+        {
+            public int slotNumber;
+            public RewardTypeSettings.RewardType rewardType;
+            public int rewardAmount;
+        }
+
+        [System.Serializable]
+        public struct Zone
+        {
+            public int zoneNumber;
+            public WheelSlot[] slot;
+        }
+
         public WheelTypeSettings _wheelTypeSettings;
         public WheelTypeSettings _wheelIndicatorSettings;
         public RewardTypeSettings _rewardTypeSettings;
@@ -26,21 +41,6 @@ namespace Wheel
         private CollectedItemsContainerController itemsContainerScript;
         private ZoneIndicatorController zoneIndicatorScript;
 
-        [System.Serializable]
-        public struct Slot
-        {
-            public int slotNumber;
-            public RewardTypeSettings.RewardType rewardType;
-            public int rewardAmount;
-        }
-
-        [System.Serializable]
-        public struct Zone
-        {
-            public int zoneNumber;
-            public Slot[] slot;
-        }
-
         public Zone[] zones;
 
         public Transform[] slotTransforms;
@@ -48,7 +48,7 @@ namespace Wheel
         private int currentZoneNumber;
         private WheelTypeSettings.WheelType zoneType;
 
-        public List<Slot> collectedItems;
+        public List<WheelSlot> collectedItems;
 
         // Start is called before the first frame update
         void Start()
@@ -57,17 +57,17 @@ namespace Wheel
 
             zoneType = WheelTypeSettings.WheelType.NORMAL;
 
-            updateUIElementsForZone(currentZoneNumber, zoneType);
+            UpdateUIElementsForZone(currentZoneNumber, zoneType);
 
-            collectedItems = new List<Slot>();
+            collectedItems = new List<WheelSlot>();
 
             itemsContainerScript = itemsContainer.GetComponent<CollectedItemsContainerController>();
             zoneIndicatorScript = zoneIndicator.GetComponent<ZoneIndicatorController>();
 
-            zoneIndicatorScript.updateZones(currentZoneNumber);
+            zoneIndicatorScript.UpdateZones(currentZoneNumber);
         }
 
-        public void updateZoneForSuccess()
+        public void UpdateZoneForSuccess()
         {
             currentZoneNumber++;
 
@@ -82,21 +82,21 @@ namespace Wheel
                 zoneType = WheelTypeSettings.WheelType.NORMAL;
             }
 
-            updateUIElementsForZone(currentZoneNumber, zoneType);
+            UpdateUIElementsForZone(currentZoneNumber, zoneType);
             wheelImage.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        public void updateZoneForReset()
+        public void UpdateZoneForReset()
         {
             currentZoneNumber = 1;
             zoneType = WheelTypeSettings.WheelType.NORMAL;
 
-            updateUIElementsForZone(currentZoneNumber, zoneType);
+            UpdateUIElementsForZone(currentZoneNumber, zoneType);
             wheelImage.transform.rotation = Quaternion.Euler(0, 0, 0);
-            collectedItems = new List<Slot>();
+            collectedItems = new List<WheelSlot>();
         }
 
-        private void updateUIElementsForZone (int zoneNumber, WheelTypeSettings.WheelType type)
+        private void UpdateUIElementsForZone (int zoneNumber, WheelTypeSettings.WheelType type)
         {
             WheelTypeSettings.WheelTypes newWheelType = _wheelTypeSettings.GetSpriteOfWheelType(type);
             WheelTypeSettings.WheelTypes newWheelIndicator = _wheelIndicatorSettings.GetSpriteOfWheelType(type);
@@ -110,74 +110,74 @@ namespace Wheel
             if(zones.Length >= zoneNumber)
             {
                 Zone currentZone = zones[zoneNumber - 1];
-                Slot[] currentSlots = currentZone.slot;
+                WheelSlot[] currentSlots = currentZone.slot;
 
                 for(int i = 0; i<currentSlots.Length; i++)
                 {
-                    Slot currentSlot = currentSlots[i];
+                    WheelSlot currentSlot = currentSlots[i];
                     Transform currentSlotTransform = slotTransforms[i];
                     RewardTypeSettings.RewardTypeSprites rewardTypeSprite = _rewardTypeSettings.GetSpriteOfRewardType(currentSlot.rewardType);
 
                     WheelSlotController _wheelSlotController = currentSlotTransform.GetComponent<WheelSlotController>();
-                    _wheelSlotController.updateSlotUIElements(rewardTypeSprite.sprite, currentSlot.rewardAmount);
+                    _wheelSlotController.UpdateSlotUIElements(rewardTypeSprite.sprite, currentSlot.rewardAmount);
                 }
             }
         
         }
 
-        public void handleRotationEnd(float roundedEndAngle)
+        public void HandleRotationEnd(float roundedEndAngle)
         {
             int slotNum = ((int)roundedEndAngle) % 8;
 
             Zone currentZone = zones[currentZoneNumber - 1];
-            Slot[] currentSlots = currentZone.slot;
-            Slot slot = currentSlots[slotNum];
+            WheelSlot[] currentSlots = currentZone.slot;
+            WheelSlot slot = currentSlots[slotNum];
 
             RewardTypeSettings.RewardType rewardType = slot.rewardType;
             int rewardAmount = slot.rewardAmount;
             RewardTypeSettings.RewardTypeSprites rewardTypeSprite = _rewardTypeSettings.GetSpriteOfRewardType(rewardType);
 
             CardPanelCreator rootUITransformScript = rootUITransform.GetComponent<CardPanelCreator>();
-            rootUITransformScript.createCardPanel(rewardTypeSprite.sprite, rewardAmount, rewardType);
+            rootUITransformScript.CreateCardPanel(rewardTypeSprite.sprite, rewardAmount, rewardType);
 
             if(rewardType == RewardTypeSettings.RewardType.DEATH)
             {
-                updateZoneForReset();
+                UpdateZoneForReset();
             }
             else
             {
-                updateZoneForSuccess();
+                UpdateZoneForSuccess();
             }
 
-            zoneIndicatorScript.updateZones(currentZoneNumber);
+            zoneIndicatorScript.UpdateZones(currentZoneNumber);
 
-            addItemToCollectedList(rewardType, rewardAmount);
+            AddItemToCollectedList(rewardType, rewardAmount);
         }
 
-        private void addItemToCollectedList(RewardTypeSettings.RewardType _rewardType, int _rewardAmount)
+        private void AddItemToCollectedList(RewardTypeSettings.RewardType rewardType, int rewardAmount)
         {
             bool found = false;
 
             for(int i = 0; i<collectedItems.Count; i++)
             {
-                Slot item = collectedItems[i];
+                WheelSlot item = collectedItems[i];
 
-                if (item.rewardType == _rewardType)
+                if (item.rewardType == rewardType)
                 {
-                    item.rewardAmount += _rewardAmount;
+                    item.rewardAmount += rewardAmount;
                     found = true;
-                    itemsContainerScript.updateITems(_rewardType, _rewardAmount);
+                    itemsContainerScript.UpdateITems(rewardType, rewardAmount);
                     break;
                 }
             }
 
             if(!found)
             {
-                Slot newSlot = new Slot();
-                newSlot.rewardType = _rewardType;
-                newSlot.rewardAmount = _rewardAmount;
+                WheelSlot newSlot = new WheelSlot();
+                newSlot.rewardType = rewardType;
+                newSlot.rewardAmount = rewardAmount;
 
-                itemsContainerScript.updateITems(_rewardType, _rewardAmount);
+                itemsContainerScript.UpdateITems(rewardType, rewardAmount);
 
                 collectedItems.Add(newSlot);
             }

@@ -12,10 +12,10 @@ public class StartAnimationController : MonoBehaviour
     private void Start()
     {
         ui_start_button = GetComponent<Button>();
-        ui_start_button.onClick.AddListener(handleStartButtonClick);
+        ui_start_button.onClick.AddListener(HandleStartButtonClick);
     }
 
-    private void handleStartButtonClick()
+    private void HandleStartButtonClick()
     {
         start_screen_animator.SetTrigger("START");
     }

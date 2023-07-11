@@ -7,7 +7,7 @@ namespace Zone
 {
     public class ZoneIndicatorController : MonoBehaviour
     {
-        public void updateZones(int currentZoneNumber)
+        public void UpdateZones(int currentZoneNumber)
         {
 
             int offset = (int)(Mathf.Floor(transform.childCount / 2));

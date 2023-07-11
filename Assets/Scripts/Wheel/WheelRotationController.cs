@@ -60,6 +60,6 @@ public class WheelRotationController : MonoBehaviour
 
         WheelController parentWheelComponentScript = parentWheelComponent.GetComponent<WheelController>();
 
-        parentWheelComponentScript.handleRotationEnd(roundedCurrentAngle);
+        parentWheelComponentScript.HandleRotationEnd(roundedCurrentAngle);
     }
 }

@@ -32,11 +32,11 @@ namespace Wheel
             // default sprite for spin
             WheelTypes result = wheelTypes[0];
 
-            foreach (WheelTypes _wheelTypeSprite in wheelTypes)
+            foreach (WheelTypes wheelTypeSprite in wheelTypes)
             {
-                if(_wheelTypeSprite.type == type)
+                if(wheelTypeSprite.type == type)
                 {
-                    return _wheelTypeSprite;
+                    return wheelTypeSprite;
                 }
             }
 

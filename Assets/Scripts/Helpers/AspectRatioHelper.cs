@@ -6,7 +6,7 @@ namespace Helpers
 {
     public class AspectRatioHelper
     {
-        public static void aspectRatioFiltterGenerator(Image imageComponent, float scaleY)
+        public static void AspectRatioFiltterGenerator(Image imageComponent, float scaleY)
         {
             AspectRatioFitter aspectRatioFitter = imageComponent.gameObject.GetComponent<AspectRatioFitter>();
             aspectRatioFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;

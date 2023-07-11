@@ -12,21 +12,23 @@ namespace Reward
         public TextMeshProUGUI rewardAmountText;
         public int currentItemAmount;
 
-        public void updateItem(Sprite _image, int _amount)
+        private const float itemRewardImageLocalScaleFactor = 0.8f;
+
+        public void UpdateItem(Sprite image, int amount)
         {
-            itemRewardImage.sprite = _image;
-            rewardAmountText.text = "x" + _amount;
-            currentItemAmount = _amount;
+            itemRewardImage.sprite = image;
+            rewardAmountText.text = "x" + amount;
+            currentItemAmount = amount;
 
-            AspectRatioHelper.aspectRatioFiltterGenerator(itemRewardImage, 1.0f);
+            AspectRatioHelper.AspectRatioFiltterGenerator(itemRewardImage, 1.0f);
 
-            itemRewardImage.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+            itemRewardImage.transform.localScale = new Vector3(itemRewardImageLocalScaleFactor, itemRewardImageLocalScaleFactor, 1f);
         }
 
-        public void updateAmountOnly (int _amount)
+        public void UpdateAmountOnly (int amount)
         {
-            rewardAmountText.text = "x" + _amount;
-            currentItemAmount = _amount;
+            rewardAmountText.text = "x" + amount;
+            currentItemAmount = amount;
         }
     }
 }

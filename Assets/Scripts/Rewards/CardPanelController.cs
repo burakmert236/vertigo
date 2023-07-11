@@ -6,33 +6,38 @@ using UnityEngine.UI;
 using Reward;
 using Helpers;
 
-public class CardPanelController : MonoBehaviour
+namespace Reward
 {
-
-    public Image rewardImage;
-    public Image cardBackground;
-    public TextMeshProUGUI rewardAmountText;
-    public TextMeshProUGUI warningText;
-
-    private void Restart()
+    public class CardPanelController : MonoBehaviour
     {
-        Destroy(gameObject);
-    }
 
-    public void updateCardPanel (Sprite _rewardImage, int _rewardAmount, RewardTypeSettings.RewardType _rewardType)
-    {
-        rewardImage.sprite = _rewardImage;
+        public Image rewardImage;
+        public Image cardBackground;
+        public TextMeshProUGUI rewardAmountText;
+        public TextMeshProUGUI warningText;
 
-        AspectRatioHelper.aspectRatioFiltterGenerator(rewardImage, 1.0f);
+        private const float rewardImageScaleFactor = 0.7f;
 
-        rewardImage.transform.localScale = new Vector3(0.7f, 0.7f, 1);
-
-        rewardAmountText.text = "x" + _rewardAmount;
-
-        if(_rewardType == RewardTypeSettings.RewardType.DEATH)
+        private void Restart()
         {
-            cardBackground.color = Color.red;
-            warningText.text = "You got the bomb! You lost everthing!\nTap to start again";
+            Destroy(gameObject);
+        }
+
+        public void UpdateCardPanel (Sprite rewardImageSprite, int rewardAmount, RewardTypeSettings.RewardType rewardType)
+        {
+            rewardImage.sprite = rewardImageSprite;
+
+            AspectRatioHelper.AspectRatioFiltterGenerator(rewardImage, 1.0f);
+
+            rewardImage.transform.localScale = new Vector3(rewardImageScaleFactor, rewardImageScaleFactor, 1);
+
+            rewardAmountText.text = "x" + rewardAmount;
+
+            if(rewardType == RewardTypeSettings.RewardType.DEATH)
+            {
+                cardBackground.color = Color.red;
+                warningText.text = "You got the bomb! You lost everthing!\nTap to start again";
+            }
         }
     }
 }
